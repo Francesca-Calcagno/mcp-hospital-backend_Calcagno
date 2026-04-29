@@ -31,7 +31,7 @@ Risposta JSON al frontend
 # Setup
 
 ```bash
-cd /Users/mariogazzara/sisca-be
+cd "C:\Users\franc\Desktop\TIROCINIO\sisca-be"
 
 # venv + dipendenze
 python -m venv .venv
