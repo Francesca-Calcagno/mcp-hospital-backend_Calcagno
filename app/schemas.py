@@ -19,3 +19,5 @@ class QueryResponse(BaseModel):
     tool_calls: list[ToolCall]
     iterations: int
     model: str
+    confidence: float = Field(..., ge=0.0, le=1.0)
+    quality_checks: list[str] = Field(default_factory=list)

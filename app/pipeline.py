@@ -6,6 +6,8 @@ from typing import Any
 
 import anthropic
 
+from .agent import mcp_result_to_text, mcp_tools_to_anthropic
+from .evaluator import build_quality_checks, compute_confidence
 from .mcp_client import MCPClient
 from .normalizer import normalize_arguments
 
@@ -49,12 +51,12 @@ async def run_query(
     client: anthropic.AsyncAnthropic,
     mcp: MCPClient,
     question: str,
-) -> tuple[str, list[dict], int, str]:
+) -> tuple[str, list[dict], int, str, float, list[str]]:
     """
     Esegue il loop agentico: il modello sceglie i tool MCP da invocare finché non
     produce una risposta finale (`stop_reason == "end_turn"`).
 
-    Returns: (answer, tool_calls_log, iterations, model_id)
+    Returns: (answer, tool_calls_log, iterations, model_id, confidence, quality_checks)
     """
     tools = mcp_tools_to_anthropic(mcp.tools)
     tool_names = {t["name"] for t in tools}
@@ -81,7 +83,17 @@ async def run_query(
 
         if response.stop_reason != "tool_use":
             text = "".join(b.text for b in response.content if b.type == "text")
-            return text or "(nessuna risposta dal modello)", tool_calls_log, iteration, last_model
+            has_tool_errors = any(call.get("error") for call in tool_calls_log)
+            confidence = compute_confidence(text or "(nessuna risposta dal modello)", tool_calls_log, iteration, has_tool_errors)
+            quality_checks = build_quality_checks(text or "(nessuna risposta dal modello)", tool_calls_log, iteration, has_tool_errors)
+            return (
+                text or "(nessuna risposta dal modello)",
+                tool_calls_log,
+                iteration,
+                last_model,
+                confidence,
+                quality_checks,
+            )
 
         messages.append({"role": "assistant", "content": response.content})
 

@@ -74,7 +74,14 @@ curl -X POST http://localhost:8000/query \
   -H "Content-Type: application/json" \
   -d '{"question": "Come sta Mario Rossi oggi?"}'
 ```
+## Qualità, confidenza e valutazione
 
+Questo progetto ora include una valutazione automatica della qualità della risposta:
+- `confidence` stima la sicurezza del backend su una scala da `0.0` a `1.0`
+- `quality_checks` riporta note sul flusso di elaborazione (tool usati, errori, iterazioni)
+- la pipeline è stata resa più modulare in `app/evaluator.py` e `app/agent.py`
+
+Il risultato JSON restituito da `/query` ora contiene anche questi campi.
 Risposta:
 
 ```json
@@ -93,7 +100,11 @@ Risposta:
     }
   ],
   "iterations": 3,
-  "model": "claude-haiku"
+  "model": "claude-haiku",
+  "confidence": 0.82,
+  "quality_checks": [
+    "Nessuna anomalia di qualità rilevata."
+  ]
 }
 ```
 
@@ -114,6 +125,19 @@ mcp dev server.py            # MCP Inspector — UI in browser
 python server.py             # stdio server (in attesa di un client)
 ```
 
+## Test e qualità del codice
+
+Il progetto include una suite di test unitari per verificare i componenti principali del backend.
+
+```bash
+python -m unittest discover tests
+```
+
+I test coprono:
+- la normalizzazione dei parametri in `app/normalizer.py`
+- il calcolo della confidenza e i controlli qualitativi in `app/evaluator.py`
+- gli schemi di risposta API in `app/schemas.py`
+
 ---
 
 ## Struttura del progetto
@@ -129,6 +153,8 @@ sisca-be/
 │   ├── main.py            # FastAPI app + lifespan│
 │   ├── mcp_client.py      # client stdio MCP     │
 │   ├── pipeline.py        # 6-step pipeline      │ Backend
+│   ├── agent.py           # tool / risultato modello│
+│   ├── evaluator.py       # confidenza e qualità  │
 │   ├── normalizer.py      # IT→EN dictionary     │
 │   └── schemas.py         # Pydantic models      │
 │                                                  ┘

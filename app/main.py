@@ -60,7 +60,7 @@ async def health() -> dict:
 @app.post("/query", response_model=QueryResponse)
 async def query(req: QueryRequest) -> QueryResponse:
     try:
-        answer, tool_calls, iterations, model = await run_query(
+        answer, tool_calls, iterations, model, confidence, quality_checks = await run_query(
             app.state.anthropic,
             app.state.mcp,
             req.question,
@@ -75,4 +75,6 @@ async def query(req: QueryRequest) -> QueryResponse:
         tool_calls=[ToolCall(**tc) for tc in tool_calls],
         iterations=iterations,
         model=model,
+        confidence=confidence,
+        quality_checks=quality_checks,
     )
