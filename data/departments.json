@@ -1,0 +1,42 @@
+[
+  {
+    "code": "cardiology",
+    "name": "Cardiologia",
+    "floor": 2,
+    "head_physician": "Dr. Bianchi",
+    "beds_total": 30,
+    "beds_available": 6
+  },
+  {
+    "code": "neurology",
+    "name": "Neurologia",
+    "floor": 3,
+    "head_physician": "Dr.ssa Conti",
+    "beds_total": 20,
+    "beds_available": 4
+  },
+  {
+    "code": "oncology",
+    "name": "Oncologia",
+    "floor": 4,
+    "head_physician": "Dr. Marini",
+    "beds_total": 25,
+    "beds_available": 2
+  },
+  {
+    "code": "pediatrics",
+    "name": "Pediatria",
+    "floor": 1,
+    "head_physician": "Dr.ssa Greco",
+    "beds_total": 18,
+    "beds_available": 9
+  },
+  {
+    "code": "emergency",
+    "name": "Pronto Soccorso",
+    "floor": 0,
+    "head_physician": "Dr. Lombardi",
+    "beds_total": 15,
+    "beds_available": 3
+  }
+]

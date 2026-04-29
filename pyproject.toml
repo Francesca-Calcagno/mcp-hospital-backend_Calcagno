@@ -1,0 +1,16 @@
+[project]
+name = "sisca-mcp-server"
+version = "0.1.0"
+description = "Mock MCP server simulating a hospital patient management system"
+requires-python = ">=3.10"
+dependencies = [
+  "mcp[cli]>=1.2.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+include = ["server.py", "data/*.json"]

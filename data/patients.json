@@ -1,0 +1,198 @@
+[
+  {
+    "id": "P001",
+    "name": "Mario Rossi",
+    "birth_date": "1958-03-15",
+    "gender": "M",
+    "department": "cardiology",
+    "room": "204",
+    "admission_date": "2026-04-20",
+    "status": "stable",
+    "diagnosis": "Infarto miocardico acuto",
+    "allergies": ["penicillin"],
+    "vital_signs": {
+      "heart_rate": 72,
+      "blood_pressure": "130/85",
+      "temperature": 36.8,
+      "oxygen_saturation": 98,
+      "recorded_at": "2026-04-27T08:30:00"
+    },
+    "clinical_notes": [
+      {
+        "date": "2026-04-27T09:00:00",
+        "author": "Dr. Bianchi",
+        "text": "Paziente stabile, ECG nella norma. Continuare terapia in atto."
+      }
+    ]
+  },
+  {
+    "id": "P002",
+    "name": "Lucia Ferrari",
+    "birth_date": "1972-11-02",
+    "gender": "F",
+    "department": "neurology",
+    "room": "311",
+    "admission_date": "2026-04-22",
+    "status": "observation",
+    "diagnosis": "Sospetto TIA",
+    "allergies": [],
+    "vital_signs": {
+      "heart_rate": 80,
+      "blood_pressure": "145/92",
+      "temperature": 36.5,
+      "oxygen_saturation": 97,
+      "recorded_at": "2026-04-27T07:45:00"
+    },
+    "clinical_notes": [
+      {
+        "date": "2026-04-26T18:00:00",
+        "author": "Dr.ssa Conti",
+        "text": "RMN encefalo programmata per domani."
+      }
+    ]
+  },
+  {
+    "id": "P003",
+    "name": "Giovanni Esposito",
+    "birth_date": "1965-07-21",
+    "gender": "M",
+    "department": "oncology",
+    "room": "402",
+    "admission_date": "2026-04-15",
+    "status": "critical",
+    "diagnosis": "Carcinoma polmonare stadio IV",
+    "allergies": ["latex"],
+    "vital_signs": {
+      "heart_rate": 105,
+      "blood_pressure": "100/60",
+      "temperature": 38.4,
+      "oxygen_saturation": 91,
+      "recorded_at": "2026-04-27T08:00:00"
+    },
+    "clinical_notes": [
+      {
+        "date": "2026-04-27T08:15:00",
+        "author": "Dr. Marini",
+        "text": "Episodio febbrile, avviata copertura antibiotica empirica."
+      }
+    ]
+  },
+  {
+    "id": "P004",
+    "name": "Sara Bianchi",
+    "birth_date": "2018-05-30",
+    "gender": "F",
+    "department": "pediatrics",
+    "room": "108",
+    "admission_date": "2026-04-26",
+    "status": "stable",
+    "diagnosis": "Bronchiolite",
+    "allergies": [],
+    "vital_signs": {
+      "heart_rate": 110,
+      "blood_pressure": "95/60",
+      "temperature": 37.2,
+      "oxygen_saturation": 96,
+      "recorded_at": "2026-04-27T08:20:00"
+    },
+    "clinical_notes": [
+      {
+        "date": "2026-04-26T22:00:00",
+        "author": "Dr.ssa Greco",
+        "text": "Aerosol ogni 6 ore, monitoraggio saturazione."
+      }
+    ]
+  },
+  {
+    "id": "P005",
+    "name": "Carla Romano",
+    "birth_date": "1949-01-10",
+    "gender": "F",
+    "department": "cardiology",
+    "room": "207",
+    "admission_date": "2026-04-24",
+    "status": "recovering",
+    "diagnosis": "Scompenso cardiaco congestizio",
+    "allergies": ["aspirin"],
+    "vital_signs": {
+      "heart_rate": 68,
+      "blood_pressure": "120/78",
+      "temperature": 36.6,
+      "oxygen_saturation": 99,
+      "recorded_at": "2026-04-27T08:35:00"
+    },
+    "clinical_notes": []
+  },
+  {
+    "id": "P006",
+    "name": "Luca Moretti",
+    "birth_date": "1990-09-12",
+    "gender": "M",
+    "department": "emergency",
+    "room": "ER-3",
+    "admission_date": "2026-04-27",
+    "status": "observation",
+    "diagnosis": "Trauma cranico minore",
+    "allergies": [],
+    "vital_signs": {
+      "heart_rate": 78,
+      "blood_pressure": "128/82",
+      "temperature": 36.9,
+      "oxygen_saturation": 99,
+      "recorded_at": "2026-04-27T07:10:00"
+    },
+    "clinical_notes": [
+      {
+        "date": "2026-04-27T07:30:00",
+        "author": "Dr. Lombardi",
+        "text": "TC cranio negativa. Osservazione 24h."
+      }
+    ]
+  },
+  {
+    "id": "P007",
+    "name": "Anna De Luca",
+    "birth_date": "1981-06-04",
+    "gender": "F",
+    "department": "neurology",
+    "room": "315",
+    "admission_date": "2026-04-21",
+    "status": "stable",
+    "diagnosis": "Emicrania cronica refrattaria",
+    "allergies": ["sulfa"],
+    "vital_signs": {
+      "heart_rate": 74,
+      "blood_pressure": "118/76",
+      "temperature": 36.7,
+      "oxygen_saturation": 98,
+      "recorded_at": "2026-04-27T08:00:00"
+    },
+    "clinical_notes": []
+  },
+  {
+    "id": "P008",
+    "name": "Paolo Costa",
+    "birth_date": "1955-12-28",
+    "gender": "M",
+    "department": "oncology",
+    "room": "405",
+    "admission_date": "2026-04-19",
+    "status": "stable",
+    "diagnosis": "Linfoma non-Hodgkin in chemioterapia",
+    "allergies": [],
+    "vital_signs": {
+      "heart_rate": 82,
+      "blood_pressure": "125/80",
+      "temperature": 36.8,
+      "oxygen_saturation": 97,
+      "recorded_at": "2026-04-27T08:25:00"
+    },
+    "clinical_notes": [
+      {
+        "date": "2026-04-25T10:00:00",
+        "author": "Dr. Marini",
+        "text": "Ciclo 3 di R-CHOP completato, buona tolleranza."
+      }
+    ]
+  }
+]

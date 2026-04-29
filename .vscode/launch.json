@@ -1,0 +1,63 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "FastAPI: backend (uvicorn --reload)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "app.main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8000",
+        "--reload"
+      ],
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/.env",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+    {
+      "name": "FastAPI: backend (no reload, breakpoints affidabili)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "app.main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8000"
+      ],
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/.env",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+    {
+      "name": "MCP server: stdio (debug isolato)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/server.py",
+      "cwd": "${workspaceFolder}",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+    {
+      "name": "MCP Inspector (mcp dev server.py)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "mcp",
+      "args": ["dev", "server.py"],
+      "cwd": "${workspaceFolder}",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "console": "integratedTerminal",
+      "justMyCode": false
+    }
+  ]
+}
