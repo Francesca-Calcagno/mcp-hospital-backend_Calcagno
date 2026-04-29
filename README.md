@@ -100,7 +100,7 @@ Risposta:
     }
   ],
   "iterations": 3,
-  "model": "claude-haiku",
+  "model": "claude-haiku-4-5-20251001",
   "confidence": 0.82,
   "quality_checks": [
     "Nessuna anomalia di qualità rilevata."

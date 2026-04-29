@@ -9,7 +9,7 @@ class TestSchemas(unittest.TestCase):
             answer="Ok",
             tool_calls=[ToolCall(name="get_patients_by_department", arguments={})],
             iterations=1,
-            model="claude-haiku",
+            model="claude-haiku-4-5-20251001",
             confidence=0.85,
             quality_checks=["Nessuna anomalia rilevata."],
         )

@@ -11,7 +11,7 @@ from .evaluator import build_quality_checks, compute_confidence
 from .mcp_client import MCPClient
 from .normalizer import normalize_arguments
 
-MODEL = "claude-haiku"
+MODEL = "claude-haiku-4-5-20251001"
 MAX_ITERATIONS = 10
 MAX_TOKENS = 4096
 
